@@ -1,11 +1,11 @@
 FROM ubuntu:latest
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
-#安装JDK 
+#安装JDK  this block is replaced!
 #RUN apt-get update
 #RUN apt-get install -y openjdk-7-jdk && apt-get install -y wget
 
-#安装jdk7
+#安装jdk7  this block is added!
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
 RUN apt-get update && apt-get install -y software-properties-common python-software-properties
 RUN add-apt-repository ppa:webupd8team/java -y
