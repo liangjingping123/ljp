@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
-#安装JDK
+#安装JDK  it's commented
 #RUN apt-get update
 #RUN apt-get install -y openjdk-7-jdk && apt-get install -y wget
 
