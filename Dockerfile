@@ -5,17 +5,16 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 #RUN apt-get update
 #RUN apt-get install -y openjdk-7-jdk && apt-get install -y wget
 
-#安装jdk7  this block is added!
-#RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
-#RUN apt-get update && apt-get install -y software-properties-common python-software-properties
-#RUN add-apt-repository ppa:webupd8team/java -y
-#RUN apt-get update
-#RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-#RUN apt-get install -y oracle-java7-installer
+#安装JDK7
+apt-get install python-software-properties
+add-apt-repository ppa:webupd8team/java
+apt-get update
+apt-get install -y wget
+apt-get install oracle-java7-installer
 
 #安装tomcat
 RUN mkdir /var/tmp/tomcat
-RUN wget -P /var/tmp/tomcat http://mirrors.noc.im/apache/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
+RUN wget -P /var/tmp/tomcat http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
 RUN tar xzf /var/tmp/tomcat/apache-tomcat-8.0.33.tar.gz -C /var/tmp/tomcat
 RUN rm -rf /var/tmp/tomcat/apache-tomcat-8.0.33.tar.gz 
 
