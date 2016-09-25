@@ -6,11 +6,10 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 #RUN apt-get install -y openjdk-7-jdk && apt-get install -y wget
 
 #安装JDK7
-apt-get install python-software-properties
-add-apt-repository ppa:webupd8team/java
-apt-get update
-apt-get install -y wget
-apt-get install oracle-java7-installer
+apt-get install oracle-java8-installer
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+update-java-alternatives -s java-8-oracle
+java -version
 
 #安装tomcat
 RUN mkdir /var/tmp/tomcat
