@@ -6,8 +6,8 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 #ADD README.md /code/README.md
 
 RUN mkdir /var/tmp/tomcat
-ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz
-#RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz -C /var/tmp/tomcat
+ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat
+#RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz/ -C /var/tmp/tomcat
 
 #安装JDK8
 #添加ppa
@@ -20,7 +20,7 @@ ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.g
 #RUN java -version
 
 #挂载宿主机目录到容器
-#VOLUME ~/smilepy/Downloads/dockersoft
+VOLUME  /dockersoft
 
 #安装tomcat
 #RUN mkdir /var/tmp/tomcat
@@ -44,7 +44,7 @@ ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.g
 
 #RUN mkdir /var/tmp/webapp
 #ADD ./ /var/tmp/webapp
-#RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0/webapps
+#RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0.M10/webapps
 #
 #EXPOSE 8080
 #
