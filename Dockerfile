@@ -17,6 +17,7 @@ RUN java -version
 
 #安装tomcat
 RUN mkdir /var/tmp/tomcat
+RUN ls  /var/tmp/tomcat
 #RUN wget -P /var/tmp/tomcat http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
 ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat
 RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz -C /var/tmp/tomcat
@@ -24,7 +25,7 @@ RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz
 
 #安装maven
 RUN mkdir /var/tmp/maven
-RUN ls  /var/tmp/maven
+
 #RUN wget -P /var/tmp/maven http://mirrors.cnnic.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
 ADD apache-maven-3.3.9-bin.tar /var/tmp/maven
 RUN tar xzf /var/tmp/maven/apache-maven-3.3.9-bin.tar -C /var/tmp/maven
