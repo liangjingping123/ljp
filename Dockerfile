@@ -20,7 +20,7 @@ ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat
 #RUN java -version
 
 #挂载宿主机目录到容器
-VOLUME  /dockersoft
+#VOLUME  /dockersoft
 
 #安装tomcat
 #RUN mkdir /var/tmp/tomcat
