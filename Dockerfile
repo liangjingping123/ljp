@@ -8,7 +8,7 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 #安装JDK8
 #添加ppa
 RUN apt-get update -y                             && \
-    apt-get install python-software-properties -y && \
+    apt-get install software-properties-common python-software-properties -y && \
     add-apt-repository ppa:webupd8team/java -y    && \
     apt-get update -y                             && \
     apt-get install oracle-java7-installer -y     && \
