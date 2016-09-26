@@ -1,4 +1,5 @@
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM java:8
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
 #安装JDK  this block is replaced!
@@ -7,13 +8,13 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 
 #安装JDK8
 #添加ppa
-RUN apt-get update -y                             && \
-    apt-get install software-properties-common python-software-properties -y && \
-    add-apt-repository ppa:webupd8team/java -y    && \
-    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-    apt-get update -y                             && \
-    apt-get install oracle-java8-installer -y
-RUN java -version
+#RUN apt-get update -y                             && \
+#    apt-get install software-properties-common python-software-properties -y && \
+#    add-apt-repository ppa:webupd8team/java -y    && \
+#    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+#    apt-get update -y                             && \
+#    apt-get install oracle-java8-installer -y
+#RUN java -version
 
 #挂载宿主机目录到容器
 VOLUME ~/smilepy/Downloads/dockersoft
