@@ -2,8 +2,11 @@
 FROM java:8
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
-WORKDIR /code
-ADD README.md /code/README.md
+#WORKDIR /code
+#ADD README.md /code/README.md
+
+RUN mkdir /var/tmp/tomcat
+ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz
 
 #安装JDK8
 #添加ppa
