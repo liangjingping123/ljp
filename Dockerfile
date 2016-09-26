@@ -7,7 +7,7 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 
 RUN mkdir /var/tmp/tomcat
 ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz
-RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz -C /var/tmp/tomcat
+#RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz -C /var/tmp/tomcat
 
 #安装JDK8
 #添加ppa
