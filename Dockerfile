@@ -2,9 +2,8 @@
 FROM java:8
 MAINTAINER Silva Song "silva.song@aliyun.com"
 
-#安装JDK  this block is replaced!
-#RUN apt-get update
-#RUN apt-get install -y openjdk-7-jdk && apt-get install -y wget
+WORKDIR /code
+ADD README.md /code/README.md
 
 #安装JDK8
 #添加ppa
@@ -17,25 +16,25 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 #RUN java -version
 
 #挂载宿主机目录到容器
-VOLUME ~/smilepy/Downloads/dockersoft
+#VOLUME ~/smilepy/Downloads/dockersoft
 
 #安装tomcat
-RUN mkdir /var/tmp/tomcat
+#RUN mkdir /var/tmp/tomcat
 #RUN wget -P /var/tmp/tomcat http://mirrors.hust.edu.cn/apache/tomcat/tomcat-8/v8.0.33/bin/apache-tomcat-8.0.33.tar.gz
-RUN mv ~/smilepy/Downloads/dockersoft/apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat
-RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz -C /var/tmp/tomcat
-RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz
+#RUN mv ~/smilepy/Downloads/dockersoft/apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat
+#RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz -C /var/tmp/tomcat
+#RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz
 
 #安装maven
-RUN mkdir /var/tmp/maven
+#RUN mkdir /var/tmp/maven
 
 #RUN wget -P /var/tmp/maven http://mirrors.cnnic.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-RUN mv  ~/smilepy/Downloads/dockersoft/apache-maven-3.3.9-bin.tar /var/tmp/maven
-RUN tar xzf /var/tmp/maven/apache-maven-3.3.9-bin.tar -C /var/tmp/maven
-RUN rm -rf /var/tmp/maven/apache-maven-3.3.9-bin.tar
+#RUN mv  ~/smilepy/Downloads/dockersoft/apache-maven-3.3.9-bin.tar /var/tmp/maven
+#RUN tar xzf /var/tmp/maven/apache-maven-3.3.9-bin.tar -C /var/tmp/maven
+#RUN rm -rf /var/tmp/maven/apache-maven-3.3.9-bin.tar
 #设置maven环境变量
-ENV MAVEN_HOME=/var/tmp/maven/apache-maven-3.3.9
-ENV PATH=$MAVEN_HOME/bin:$PATH
+#ENV MAVEN_HOME=/var/tmp/maven/apache-maven-3.3.9
+#ENV PATH=$MAVEN_HOME/bin:$PATH
 
 
 
