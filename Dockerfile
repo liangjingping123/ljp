@@ -10,10 +10,17 @@ MAINTAINER Silva Song "silva.song@aliyun.com"
 RUN apt-get update -y                             && \
     apt-get install software-properties-common python-software-properties -y && \
     add-apt-repository ppa:webupd8team/java -y    && \
+    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
     apt-get update -y                             && \
-    apt-get install oracle-java7-installer -y     && \
-    oracle-java7-set-default
+    apt-get install oracle-java8-installer -y     && \
+    oracle-java8-set-default
 RUN java -version
+
+
+#RUN add-apt-repository ppa:webupd8team/java
+#RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+#RUN apt-get update && apt-get clean
+#RUN apt-get install -y oracle-java8-installer
 
 #安装tomcat
 RUN mkdir /var/tmp/tomcat
