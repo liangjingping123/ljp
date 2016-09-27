@@ -3,10 +3,6 @@ FROM java:8
 MAINTAINER smilepy "peiyu617@163.com"
 
 
-RUN mkdir /var/tmp/tomcat
-ADD apache-tomcat-9.0.0.M10.tar.gz /var/tmp/tomcat
-#RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M10.tar.gz/ -C /var/tmp/tomcat
-
 #安装JDK8
 #添加ppa
 #RUN apt-get update -y                             && \
