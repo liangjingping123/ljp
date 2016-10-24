@@ -16,9 +16,9 @@ MAINTAINER smilepy "peiyu617@163.com"
 
 #安装tomcat
 RUN mkdir /var/tmp/tomcat
-RUN wget -P /var/tmp/tomcat http://mirror.bjtu.edu.cn/apache/tomcat/tomcat-9/v9.0.0.M6/bin/apache-tomcat-9.0.0.M6.tar.gz
-RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M6.tar.gz -C /var/tmp/tomcat
-RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M6.tar.gz
+RUN wget -P /var/tmp/tomcat http://mirror.bjtu.edu.cn/apache/tomcat/tomcat-9/v9.0.0.M11/bin/apache-tomcat-9.0.0.M11.tar.gz
+RUN tar xzf /var/tmp/tomcat/apache-tomcat-9.0.0.M11.tar.gz -C /var/tmp/tomcat
+RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M11.tar.gz
 
 #安装maven
 RUN mkdir /var/tmp/maven
@@ -34,7 +34,7 @@ ENV PATH=$MAVEN_HOME/bin:$PATH
 
 RUN mkdir /var/tmp/webapp
 ADD ./ /var/tmp/webapp
-RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0.M6/webapps
+RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0.M11/webapps
 
 EXPOSE 8080
 
