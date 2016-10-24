@@ -38,5 +38,5 @@ RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var
 
 EXPOSE 8080
 
-CMD ["./var/tmp/tomcat/apache-tomcat-9.0.0.M6/bin/catalina.sh","run"]
+CMD ["./var/tmp/tomcat/apache-tomcat-9.0.0.M11/bin/catalina.sh","run"]
 
