@@ -24,7 +24,7 @@ RUN mkdir /var/tmp/webapp
 #ADD ./ /var/tmp/webapp
 #RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0.M11/webapps
 ADD ./target/*.war /var/tmp/webapp
-RUN cd /var/tmp/webapp && ll -al
+RUN cd /var/tmp/webapp && ls  -al
 RUN cp -r /var/tmp/webapp/* /var/tmp/tomcat/apache-tomcat-9.0.0.M11/webapps
 
 EXPOSE 8080
