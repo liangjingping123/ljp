@@ -23,7 +23,8 @@ RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M11.tar.gz
 RUN mkdir /var/tmp/webapp
 #ADD ./ /var/tmp/webapp
 #RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0.M11/webapps
-ADD ./target/ /var/tmp/webapp
+ADD ./target/*.war /var/tmp/webapp
+RUN cd /var/tmp/webapp && ll -al
 RUN cp -r /var/tmp/webapp/* /var/tmp/tomcat/apache-tomcat-9.0.0.M11/webapps
 
 EXPOSE 8080
