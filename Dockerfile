@@ -18,8 +18,6 @@ RUN rm -rf /var/tmp/tomcat/apache-tomcat-9.0.0.M11.tar.gz
 #ENV MAVEN_HOME=/var/tmp/maven/apache-maven-3.3.9
 #ENV PATH=$MAVEN_HOME/bin:$PATH
 
-
-
 RUN mkdir /var/tmp/webapp
 #ADD ./ /var/tmp/webapp
 #RUN cd /var/tmp/webapp && mvn package && cp /var/tmp/webapp/target/CIJD.war /var/tmp/tomcat/apache-tomcat-9.0.0.M11/webapps
